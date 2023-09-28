@@ -40,7 +40,7 @@ app.get('/setup', async (req, res) => {
 app.post('/setup/', async (req, res) => {
     const { address, free } = req.body
     try {
-        const data = await pool.query('SELECT * FROM hotel_room WHERE address = ($1) and available = ($2))', [address, free])
+        const data = await pool.query('SELECT * FROM hotel_room WHERE address = ($1) and available = ($2)', [address, free])
         res.status(200).send(data.rows)
     } catch (err) {
         console.log(err)
