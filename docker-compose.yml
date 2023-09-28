@@ -1,0 +1,15 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_USER: user123
+      POSTGRES_DB: projeto-hoteis
+    volumes:
+      - ./data:/data/postgres
+
+  app:
+    image: my-node-app
+    ports:
+      - 13000:3000

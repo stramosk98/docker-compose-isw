@@ -1,0 +1,25 @@
+###
+GET http://localhost:13000/setup
+
+###
+GET http://localhost:13000
+
+###
+POST http://localhost:13000/
+Content-Type: application/json
+
+{
+    "name": "Hotel 5 Estrelas",
+    "address": "Rio do Sul - SC",
+    "room": "108",
+    "free": false
+}
+
+###
+POST http://localhost:13000/setup/
+Content-Type: application/json
+
+{
+    "address": "Rio do Sul - SC",
+    "free": true
+}
