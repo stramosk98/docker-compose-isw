@@ -12,4 +12,7 @@ services:
   app:
     image: my-node-app
     ports:
-      - 13000:3000
+      - 9000:3000
+    depends_on:
+      - db
+    command: sh -c "sleep 10 && npm run db-create && npm run dev"
